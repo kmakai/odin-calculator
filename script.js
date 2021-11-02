@@ -29,8 +29,9 @@ function operate(operator, a, b) {
 }
 
 const numButton = document.querySelectorAll('.numberBtn');
-const operatorbtn = document.querySelector('.operatBtn');
+const operatorBtn = document.querySelector('.operatBtn');
 const currentOperation = document.querySelector('.currentOperation');
+const clearBtn = document.querySelector('.clearBtn');
 
 numButton.forEach(element => {
     element.addEventListener('click',function(){
@@ -38,3 +39,4 @@ numButton.forEach(element => {
         currentOperation.textContent += this.textContent;
     })
 })
+
