@@ -1,0 +1,33 @@
+*{
+    border: 2px solid red;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.screen{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsMap{
+    display: flex;
+    
+
+    
+}
+button{
+    padding: 1em;
+}
