@@ -39,7 +39,6 @@ let a;
 let b;
 numButton.forEach(element => {
     element.addEventListener('click', function () {
-        console.log(element.textContent);
         if (currentOperation.textContent === '0') {
             currentOperation.textContent = this.textContent;
         } else {
@@ -59,7 +58,6 @@ operatorBtn.forEach(element => {
         a = currentOperation.textContent;
         a = Number(a);
         lastOperator.textContent += a +' '+ op + ' ';
-        console.log(a);
         currentOperation.textContent = 0;
     })
 })
@@ -68,6 +66,8 @@ equalsBtn.addEventListener('click',function(){
     b = currentOperation.textContent;
     lastOperator.textContent += b;
     b = Number(b);
-    currentOperation.textContent = operate(op,a,b);
+    if(op === '/' && b === 0){currentOperation.textContent = "Black hole"}else{
+    const ans = operate(op,a,b);
+    currentOperation.textContent = Math.round(ans * 100) / 100;}
 })
 
