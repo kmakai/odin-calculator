@@ -27,3 +27,12 @@ function operate(operator, a, b) {
         return a / b;
     }
 }
+
+const button = document.querySelectorAll('button');
+console.log(button);
+
+button.forEach(element => {
+    element.addEventListener('click',function(){
+        console.log(element.textContent);
+    })
+})
