@@ -29,14 +29,45 @@ function operate(operator, a, b) {
 }
 
 const numButton = document.querySelectorAll('.numberBtn');
-const operatorBtn = document.querySelector('.operatBtn');
+const operatorBtn = document.querySelectorAll('.operateBtn');
 const currentOperation = document.querySelector('.currentOperation');
 const clearBtn = document.querySelector('.clearBtn');
-
+const lastOperator = document.querySelector('.lastOperation');
+const equalsBtn = document.querySelector('.equalsBtn');
+let op;
+let a;
+let b;
 numButton.forEach(element => {
-    element.addEventListener('click',function(){
+    element.addEventListener('click', function () {
         console.log(element.textContent);
-        currentOperation.textContent += this.textContent;
+        if (currentOperation.textContent === '0') {
+            currentOperation.textContent = this.textContent;
+        } else {
+            currentOperation.textContent += this.textContent;
+        }
     })
+})
+
+clearBtn.addEventListener('click', function () {
+    currentOperation.textContent = 0;
+    lastOperator.textContent = '';
+})
+
+operatorBtn.forEach(element => {
+    element.addEventListener('click', function () {
+        op = element.textContent;
+        a = currentOperation.textContent;
+        a = Number(a);
+        lastOperator.textContent += a +' '+ op + ' ';
+        console.log(a);
+        currentOperation.textContent = 0;
+    })
+})
+
+equalsBtn.addEventListener('click',function(){
+    b = currentOperation.textContent;
+    lastOperator.textContent += b;
+    b = Number(b);
+    currentOperation.textContent = operate(op,a,b);
 })
 

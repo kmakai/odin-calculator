@@ -26,6 +26,9 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+.lastOperation{
+    height: 1em;
+}
 
 .currentOperation{
     max-height: 1em;
