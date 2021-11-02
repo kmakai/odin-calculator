@@ -28,11 +28,13 @@ function operate(operator, a, b) {
     }
 }
 
-const button = document.querySelectorAll('button');
-console.log(button);
+const numButton = document.querySelectorAll('.numberBtn');
+const operatorbtn = document.querySelector('.operatBtn');
+const currentOperation = document.querySelector('.currentOperation');
 
-button.forEach(element => {
+numButton.forEach(element => {
     element.addEventListener('click',function(){
         console.log(element.textContent);
+        currentOperation.textContent += this.textContent;
     })
 })

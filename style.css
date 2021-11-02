@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -24,9 +25,10 @@ body{
 .buttonsMap{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    
+}
 
-    
+.currentOperation{
+    max-height: 1em;
 }
 button{
     padding: 1em;
